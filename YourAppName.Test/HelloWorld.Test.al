@@ -8,7 +8,7 @@ codeunit 50100 "HelloWorld Test"
     var
         CustList: TestPage "Customer List";
     begin
-        CustList.Open();
+        CustList.OpenView();
         CustList.Close();
         if (not MessageDisplayed) then
             ERROR('Message was not displayed!');
