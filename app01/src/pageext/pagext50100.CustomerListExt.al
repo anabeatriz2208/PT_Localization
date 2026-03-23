@@ -4,6 +4,17 @@
 
 pageextension 50100 CustomerListExt extends "Customer List"
 {
+    layout
+    {
+        addafter(Name)
+        {
+            field("Active"; Rec."Active")
+            {
+                //DataClassification = ToBeClassified;
+            }
+        }
+    }
+
     trigger OnOpenPage();
     begin
         Message('App published: Hello world.');

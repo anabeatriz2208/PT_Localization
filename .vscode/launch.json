@@ -2,6 +2,22 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "SANDBOX PT",
+            "request": "launch",
+            "type": "al",
+            "tenant": "77d092ec-dfc8-47e8-ae4b-befbff2004d5",
+            "environmentType": "Sandbox",
+            "environmentName": "PT_SBOX",
+            // "startupObjectId": 22,
+            // "startupObjectType": "Page",
+            "breakOnError": "All",
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "forceUpgrade": true,
+            "schemaUpdateMode": "ForceSync"
+        },
+        {
             "name": "Your own server",
             "request": "launch",
             "type": "al",
