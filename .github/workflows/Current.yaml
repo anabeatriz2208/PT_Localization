@@ -3,7 +3,8 @@ name: ' Test Current'
 on:
   workflow_dispatch:
   push:
-    branches: [ 'test' ]
+    branches:
+      - Test
 
 permissions:
   actions: read
