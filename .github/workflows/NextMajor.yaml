@@ -2,6 +2,9 @@ name: ' Test Next Major'
 
 on:
   workflow_dispatch:
+  push:
+    branches: [ 'test' ]
+
 
 permissions:
   actions: read
