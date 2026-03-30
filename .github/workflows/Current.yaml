@@ -2,6 +2,10 @@ name: ' Test Current'
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - Test
+
 
 permissions:
   actions: read
