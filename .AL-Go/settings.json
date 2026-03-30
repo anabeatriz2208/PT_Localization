@@ -6,13 +6,4 @@
   "bcptTestFolders": [],
   "repoVersion": "1.1",
 
-  "branches": {
-    "Test": {
-      "includeCurrent": true,
-      "includeNextMinor": true,
-      "includeNextMajor": true,
-      "runTests": true,
-      "deployToEnvironment": "PT_SBOX"
-    }
-  }
 }
