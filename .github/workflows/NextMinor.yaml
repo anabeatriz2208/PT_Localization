@@ -5,6 +5,10 @@ on:
   push:
     branches:
       - Test
+      
+concurrency:
+   group: next-version-tests
+   cancel-in-progress: false
 
 
 permissions:
