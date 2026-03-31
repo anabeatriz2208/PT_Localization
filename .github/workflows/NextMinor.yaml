@@ -5,7 +5,11 @@ on:
  pull_request:
   branches:
     - Test
-      
+  
+ workflow_run:
+    workflows: ["Test Next Major"]
+    types: [completed]
+
 concurrency:
    group: next-version-tests-minor
    cancel-in-progress: false
