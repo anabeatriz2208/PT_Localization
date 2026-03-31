@@ -2,10 +2,10 @@ name: ' Test Current'
 
 on:
   workflow_dispatch:
-  
   push:
     branches:
       - Test
+
 concurrency:
    group: next-version-tests
    cancel-in-progress: false
