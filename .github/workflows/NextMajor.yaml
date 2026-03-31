@@ -1,10 +1,10 @@
 name: ' Test Next Major'
 
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - Test
+ workflow_dispatch:
+ pull_request:
+  branches:
+    - Test
       
 concurrency:
    group: next-version-tests
