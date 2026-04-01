@@ -5,6 +5,8 @@ on:
  pull_request:
   branches:
     - Test
+    
+ workflow_call:
 
 permissions:
   actions: read
