@@ -1,14 +1,7 @@
 name: ' Test Next Major'
 
 on:
- workflow_dispatch:
- pull_request:
-  branches:
-    - Test
-      
-concurrency:
-   group: next-version-tests
-   cancel-in-progress: false
+ workflow_call: 
 
 permissions:
   actions: read
