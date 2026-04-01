@@ -1,18 +1,7 @@
 name: ' Test Next Minor'
 
 on:
- workflow_dispatch:
- pull_request:
-  branches:
-    - Test
-  
- workflow_run:
-    workflows: ["Test Next Major"]
-    types: [completed]
-
-concurrency:
-   group: next-version-tests-minor
-   cancel-in-progress: false
+ workflow_call: 
 
 permissions:
   actions: read
