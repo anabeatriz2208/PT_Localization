@@ -1,10 +1,10 @@
 name: ' Publish To Environment'
 
 on:
-  push:
-    branches:
-      - TEST
-      inputs:
+  workflow_call:
+  workflow_dispatch:
+  
+   inputs:
       appVersion:
         description: App version to deploy to environment(s) (current, prerelease, draft, latest, version number or PR_<PR Id>)
         required: false
