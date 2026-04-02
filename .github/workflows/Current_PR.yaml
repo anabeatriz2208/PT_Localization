@@ -1,0 +1,10 @@
+name: Trigger Current on PR
+
+on:
+  pull_request:
+    branches:
+      - Test
+
+jobs:
+  run-current:
+    uses: ./.github/workflows/Current.yaml
