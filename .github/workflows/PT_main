@@ -1,0 +1,29 @@
+name: PT Main Pipeline (Release → Deploy SaaS)
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+
+  run-cicd:
+    name: Build & Validate (Final)
+    uses: ./.github/workflows/CICD.yaml
+
+  run-version:
+    name: Increment Version Number
+    needs: run-cicd
+    uses: ./.github/workflows/IncrementVersionNumber.yaml
+
+  run-release:
+    name: Create GitHub Release
+    needs: run-version
+    uses: ./.github/workflows/CreateRelease.yaml
+
+  run-deploy:
+    name: Deploy to SaaS Environment
+    needs: run-release
+    uses: ./.github/workflows/PublishToEnvironment.yaml
+``
