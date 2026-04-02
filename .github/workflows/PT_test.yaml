@@ -1,21 +1,24 @@
 name: PT Test Master Pipeline (Current → Major → Minor)
 
 on:
-  workflow_call:
+  pull_request:
+    branches:
+      - Test
   workflow_dispatch:
+  workflow_call:
 
 jobs:
 
   run-current:
     name: Run Test Current
-    uses: ./.github/workflows/TestCurrent.yaml
+    uses: ./.github/workflows/Current.yaml
 
   run-major:
     name: Run Test Next Major
     needs: run-current
-    uses: ./.github/workflows/TestNextMajor.yaml
+    uses: ./.github/workflows/NextMajor.yaml
 
   run-minor:
     name: Run Test Next Minor
     needs: run-major
-    uses: ./.github/workflows/TestNextMinor.yaml
+    uses: ./.github/workflows/NextMinor.yaml
