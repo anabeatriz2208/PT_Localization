@@ -1,9 +1,9 @@
 name: PT Test Master Pipeline (Current → Major → Minor)
 
 on:
-  workflow_call:
-  workflow_dispatch:
-
+ workflow_call:
+   
+ 
 jobs:
 
   run-current:
