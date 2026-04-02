@@ -1,9 +1,7 @@
 name: PT Test Master Pipeline (Current → Major → Minor)
 
 on:
-  pull_request:
-    branches:
-      - Test
+  workflow_call:
   workflow_dispatch:
 
 jobs:
