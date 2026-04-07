@@ -31,7 +31,7 @@ jobs:
   automated-tests:
    name: Run Automated Tests
    needs: publish-to-environment
-   if: github.event_name == 'pull_request' && github.base_ref == 'test'
+   if: github.event_name == 'pull_request' && github.base_ref == 'Test'
    runs-on: ubuntu-latest
 
    steps:
