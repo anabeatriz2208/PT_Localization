@@ -2,20 +2,24 @@ name: ' Publish To Environment'
 
 on:
   workflow_call:
-  workflow_dispatch:
-  
    inputs:
-      appVersion:
-        description: App version to deploy to environment(s) (current, prerelease, draft, latest, version number or PR_<PR Id>)
-        required: false
-        default: 'current'
-      environmentName:
-        description: Environment mask to receive the new version (* for all, PROD* for all environments starting with PROD)
-        required: true
-      createEnvIfNotExists:
-        description: Create environment if it does not exist (use with care, yourEnvName_AuthContext yourEnvName_EnvironmentName yourEnvName_Scope must be defined as environment secrets/variables or repo secrets/variables)
-        type: boolean
-        default: false
+    appVersion:
+      description: App version to deploy to environment(s) (current, prerelease, draft, latest, version number or PR_<PR Id>)
+      required: false
+      default: 'current'
+      type: string
+        
+    environmentName:
+      description: Environment mask to receive the new version (* for all, PROD* for all environments starting with PROD)
+      required: true
+      type: string
+        
+    createEnvIfNotExists:
+      description: Create environment if it does not exist (use with care, yourEnvName_AuthContext yourEnvName_EnvironmentName yourEnvName_Scope must be defined as environment secrets/variables or repo secrets/variables)
+      type: boolean
+      default: false
+        
+  workflow_dispatch:
 
 permissions:
   actions: read
