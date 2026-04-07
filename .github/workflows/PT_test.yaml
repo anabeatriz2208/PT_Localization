@@ -28,3 +28,15 @@ jobs:
     with:
       environmentName: PT_SBOX
       appVersion: current
+  automated-tests:
+   name: Run Automated Tests
+   needs: publish-to-environment
+   if: github.event_name == 'pull_request' && github.base_ref == 'test'
+   runs-on: ubuntu-latest
+
+   steps:
+    - name: Run AL Automated Tests
+      uses: microsoft/AL-Go/Actions/RunTests@v3
+      with:
+        environmentName: PT_SBOX
+
