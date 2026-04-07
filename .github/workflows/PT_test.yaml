@@ -8,7 +8,6 @@ on:
   workflow_call:
 
 jobs:
-
   run-current:
     name: Run Test Current
     uses: ./.github/workflows/Current.yaml
@@ -22,3 +21,11 @@ jobs:
     name: Run Test Next Minor
     needs: run-major
     uses: ./.github/workflows/NextMinor.yaml
+
+  publish-to-environment:
+    name: Publish to SaaS Environment
+    needs: run-minor
+    uses: ./.github/workflows/PublishToEnvironment.yaml
+    with:
+      environmentName: PT_SBOX
+      version: current
