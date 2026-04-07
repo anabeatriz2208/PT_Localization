@@ -27,4 +27,4 @@ jobs:
     uses: ./.github/workflows/PublishToEnvironment.yaml
     with:
       environmentName: PT_SBOX
-      appversion: current
+      appVersion: current
