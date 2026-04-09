@@ -7,30 +7,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-current:
-    name: Run Test Current
-    uses: ./.github/workflows/Current.yaml
 
-  run-major:
-    name: Run Test Next Major
-    needs: run-current
-    uses: ./.github/workflows/NextMajor.yaml
-
-  run-minor:
-    name: Run Test Next Minor
-    needs: run-major
-    uses: ./.github/workflows/NextMinor.yaml
-
-  publish-to-environment:
-    name: Publish to SaaS Environment
-    needs: run-minor
-    uses: ./.github/workflows/PublishToEnvironment.yaml
-    with:
-      environmentName: PT_SBOX
-      appVersion: current
-  automated-tests:
+ automated-tests:
    name: Run Automated Tests
-   needs: publish-to-environment
    if: github.event_name == 'pull_request' && github.base_ref == 'Test'
    runs-on: ubuntu-latest
 
@@ -44,4 +23,28 @@ jobs:
         shell: pwsh
         runTests: true
         environmentName: PT_SBOX
+        
+   run-current:
+    name: Run Test Current
+    needs: automated_tests
+    uses: ./.github/workflows/Current.yaml
+
+   run-major:
+    name: Run Test Next Major
+    needs: run-current
+    uses: ./.github/workflows/NextMajor.yaml
+
+   run-minor:
+    name: Run Test Next Minor
+    needs: run-major
+    uses: ./.github/workflows/NextMinor.yaml
+    
+  publish-to-environment:
+    name: Publish to SaaS Environment
+    needs: run-minor
+    uses: ./.github/workflows/PublishToEnvironment.yaml
+    with:
+      environmentName: PT_SBOX
+      appVersion: current
+  
 
