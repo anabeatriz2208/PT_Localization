@@ -32,11 +32,7 @@ jobs:
    name: Run Automated Tests
    needs: publish-to-environment
    if: github.event_name == 'pull_request' && github.base_ref == 'Test'
-   runs-on: ubuntu-latest
-
-   steps:
-    - name: Run AL Automated Tests
-      uses: microsoft/AL-Go-Actions/RunTests@v8.3
-      with:
-        environmentName: PT_SBOX
+   uses: microsoft/AL-Go-Actions/.github/workflows/Test.yml@v8.3
+   with:
+    environmentName: PT_SBOX
 
