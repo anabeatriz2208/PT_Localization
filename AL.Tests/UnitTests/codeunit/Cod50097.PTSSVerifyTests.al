@@ -1,5 +1,7 @@
 codeunit 50097 "PTSS Verify Tests"
 {
+Subtype = Test;
+
     #region jrosa
 
     procedure PostedSalesInvoiceHasHash(SalesHeader: Record "Sales Header")
