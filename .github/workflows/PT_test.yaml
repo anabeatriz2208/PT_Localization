@@ -36,7 +36,7 @@ jobs:
 
    steps:
     - name: Run AL Automated Tests
-      uses: microsoft/AL-Go/Actions/RunTests@v3
+      uses: microsoft/AL-Go-Actions/RunTests@v8.3
       with:
         environmentName: PT_SBOX
 
