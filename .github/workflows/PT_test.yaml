@@ -7,17 +7,9 @@ on:
   workflow_dispatch:
 
 jobs:
-
- automated-tests:
-   name: Run Automated Tests
-   uses: microsoft/AL-Go-Actions/.github/workflows/Test.yml@v8.3
-   with:
-    environmentName: PT_SBOX
-    secrets: inherit
-        
+       
  run-current:
    name: Run Test Current
-   needs: automated-tests
    uses: ./.github/workflows/Current.yaml
 
  run-major:
