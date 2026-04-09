@@ -1,8 +1,21 @@
 codeunit 50097 "PTSS Verify Tests"
 {
 Subtype = Test;
-
     #region jrosa
+
+    [Test]
+    procedure Test_PostedSalesInvoice_HasHash()
+    var
+        SalesHeader: Record "Sales Header";
+        TestHelper: Codeunit "PTSS Tester Helper";
+    begin
+        // Arrange
+        TestHelper.CreateSalesInvoice(SalesHeader);
+
+        // Act + Assert
+        PostedSalesInvoiceHasHash(SalesHeader);
+    end;
+
 
     procedure PostedSalesInvoiceHasHash(SalesHeader: Record "Sales Header")
     var
