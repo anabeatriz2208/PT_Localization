@@ -11,40 +11,32 @@ jobs:
  automated-tests:
    name: Run Automated Tests
    if: github.event_name == 'pull_request' && github.base_ref == 'Test'
-   runs-on: ubuntu-latest
-
-   steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-
-    - name: Run AL Automated Tests
-      uses: microsoft/AL-Go-Actions@v8.3
-      with:
-        shell: pwsh
-        runTests: true
-        environmentName: PT_SBOX
+   uses: microsoft/AL-Go-Actions/.github/workflows/Test.yml@v8.3
+   with:
+    environmentName: PT_SBOX
+    secrets: inherit
         
-   run-current:
-    name: Run Test Current
-    needs: automated_tests
-    uses: ./.github/workflows/Current.yaml
+ run-current:
+   name: Run Test Current
+   needs: automated_tests
+   uses: ./.github/workflows/Current.yaml
 
-   run-major:
-    name: Run Test Next Major
-    needs: run-current
-    uses: ./.github/workflows/NextMajor.yaml
+ run-major:
+   name: Run Test Next Major
+   needs: run-current
+   uses: ./.github/workflows/NextMajor.yaml
 
-   run-minor:
-    name: Run Test Next Minor
-    needs: run-major
-    uses: ./.github/workflows/NextMinor.yaml
+ run-minor:
+   name: Run Test Next Minor
+   needs: run-major
+   uses: ./.github/workflows/NextMinor.yaml
     
-  publish-to-environment:
-    name: Publish to SaaS Environment
-    needs: run-minor
-    uses: ./.github/workflows/PublishToEnvironment.yaml
-    with:
-      environmentName: PT_SBOX
-      appVersion: current
+ publish-to-environment:
+   name: Publish to SaaS Environment
+   needs: run-minor
+   uses: ./.github/workflows/PublishToEnvironment.yaml
+   with:
+    environmentName: PT_SBOX
+    appVersion: current
   
 
