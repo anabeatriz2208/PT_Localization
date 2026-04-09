@@ -18,7 +18,7 @@ jobs:
         
  run-current:
    name: Run Test Current
-   needs: automated_tests
+   needs: automated-tests
    uses: ./.github/workflows/Current.yaml
 
  run-major:
