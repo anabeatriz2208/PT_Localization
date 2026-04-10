@@ -13,7 +13,9 @@ jobs:
   uses: microsoft/AL-Go-Actions/.github/workflows/Test.yml@v8.3
   with:
     environmentName: PT_SBOX
+    bcContainerAppVersion: latest
   secrets: inherit
+
 
 
  run-current:
