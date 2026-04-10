@@ -8,45 +8,30 @@ on:
 
 jobs:
 
-  test-current:
-    name: Run Automated Tests (Current)
-    uses: microsoft/AL-Go-Actions/.github/workflows/Test.yml@v8.3
-    with:
-      environmentName: CURRENT
-    secrets: inherit
+ automated-tests:
+  name: Run Automated Tests
+  uses: microsoft/AL-Go-Actions/.github/workflows/Test.yml@v8.3
+  with:
+    environmentName: PT_SBOX
+  secrets: inherit
 
-  test-major:
-    name: Run Automated Tests (Next Major)
-    needs: test-current
-    uses: microsoft/AL-Go-Actions/.github/workflows/Test.yml@v8.3
-    with:
-      environmentName: NEXTMAJOR
-    secrets: inherit
 
-  test-minor:
-    name: Run Automated Tests (Next Minor)
-    needs: test-major
-    uses: microsoft/AL-Go-Actions/.github/workflows/Test.yml@v8.3
-    with:
-      environmentName: NEXTMINOR
-    secrets: inherit
-
-  run-current:
+ run-current:
     name: Run Build Current
-    needs: test-minor
+    needs: automated-tests
     uses: ./.github/workflows/Current.yaml
 
-  run-major:
+ run-major:
     name: Run Build Next Major
     needs: run-current
     uses: ./.github/workflows/NextMajor.yaml
 
-  run-minor:
+ run-minor:
     name: Run Build Next Minor
     needs: run-major
     uses: ./.github/workflows/NextMinor.yaml
 
-  publish-to-environment:
+ publish-to-environment:
     name: Publish to SaaS Environment
     needs: run-minor
     uses: ./.github/workflows/PublishToEnvironment.yaml
