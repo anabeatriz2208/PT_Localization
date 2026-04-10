@@ -2,7 +2,8 @@ name: 'Pull Request Build'
 
 on:
   pull_request:
-    branches: [ 'Test' ]
+    branches:
+      -main
   merge_group:
 
 concurrency:
