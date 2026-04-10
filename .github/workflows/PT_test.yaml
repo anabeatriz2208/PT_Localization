@@ -1,0 +1,33 @@
+name: PT Test Master Pipeline (Current → Major → Minor)
+
+on:
+  pull_request:
+    branches:
+      - Test
+  workflow_dispatch:
+
+jobs:
+
+  run-current:
+    name: Run Build Current
+    uses: ./.github/workflows/Current.yaml
+
+  run-major:
+    name: Run Build Next Major
+    needs: run-current
+    uses: ./.github/workflows/NextMajor.yaml
+
+  run-minor:
+    name: Run Build Next Minor
+    needs: run-major
+    uses: ./.github/workflows/NextMinor.yaml
+
+  publish-to-environment:
+    name: Publish to SaaS Environment
+    needs: run-minor
+    uses: ./.github/workflows/PublishToEnvironment.yaml
+    with:
+      environmentName: PT_SBOX
+      appVersion: current
+
+
