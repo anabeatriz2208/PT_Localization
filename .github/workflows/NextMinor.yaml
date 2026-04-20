@@ -1,7 +1,7 @@
 name: ' Test Next Minor'
 
 on:
-  workflow_dispatch:
+  workflow_call: 
   
   push:
     branches:
