@@ -1,0 +1,8 @@
+name: Update app versions from release
+
+on:
+  workflow_run:
+    workflows: [" Create Release "]
+    types:
+      - completed
+``
