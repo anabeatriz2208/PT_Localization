@@ -1,12 +1,7 @@
 name: ' Test Next Minor'
 
 on:
-  workflow_dispatch:
-  
-  push:
-    branches:
-      - Test
-
+ workflow_call: 
 
 permissions:
   actions: read
