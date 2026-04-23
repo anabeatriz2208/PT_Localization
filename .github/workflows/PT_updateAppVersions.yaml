@@ -1,0 +1,14 @@
+name: Update app versions from release
+
+on:
+  workflow_run:
+    workflows: [" Create release"]
+    types:
+      - completed
+
+jobs:
+  dummy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Just a placeholder
+        run: echo "Workflow triggered"
