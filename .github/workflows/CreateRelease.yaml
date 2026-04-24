@@ -6,11 +6,7 @@ concurrency:
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-      
-      inputs:
+    inputs:
       buildVersion:
         description: Build version to promote to release (default is latest)
         required: false
