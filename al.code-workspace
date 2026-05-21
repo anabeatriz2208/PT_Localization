@@ -7,6 +7,9 @@
       "path": "YourAppName.Test"
     },
     {
+      "path": "app02.Test"
+    },
+    {
       "path": ".AL-Go"
     }
   ],
