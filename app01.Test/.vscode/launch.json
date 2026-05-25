@@ -1,5 +1,16 @@
 {
     "version": "0.2.0",
     "configurations": [
+        {
+            "name": "BC",
+            "type": "al",
+            "request": "launch",
+            "server": "http://localhost",
+            "serverInstance": "BC",
+            "authentication": "UserPassword",
+            "startupObjectType": "Codeunit",
+            "startupObjectId": 50100,
+            "port": 7049
+        }
     ]
 }
