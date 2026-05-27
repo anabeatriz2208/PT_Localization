@@ -5,12 +5,9 @@
             "name": "Docker container",
             "request": "launch",
             "type": "al",
-            //"environmentType": "OnPrem",
             "server": "http://bc280/BC",
             "serverInstance": "BC",
             "authentication": "UserPassword",
-            // "startupObjectId": 130451, // AL Test Tool
-            //"startupObjectId": 130451, //Ferramenta teste
             "startupObjectType": "Page",
             "breakOnError": true,
             "launchBrowser": true,
