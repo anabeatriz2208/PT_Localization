@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Docker container",
+            "request": "launch",
+            "type": "al",
+            "server": "http://bc280/BC",
+            "serverInstance": "BC",
+            "authentication": "UserPassword",
+            "startupObjectType": "Page",
+            "breakOnError": true,
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "tenant": "default",
+            "forceUpgrade": true,
+            "schemaUpdateMode": "ForceSync"
+        }
+    ]
+}

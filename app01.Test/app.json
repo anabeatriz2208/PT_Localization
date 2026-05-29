@@ -1,0 +1,21 @@
+{
+  "id": "573d2b02-47b0-4303-b03c-fe6d63623096",
+  "name": "app01.Test",
+  "publisher": "beatrizsilva",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "features": [
+    "NoImplicitWith"
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  }
+}
