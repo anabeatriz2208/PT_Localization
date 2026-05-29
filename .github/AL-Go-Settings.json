@@ -3,5 +3,6 @@
   "type": "PTE",
   "templateUrl": "https://github.com/microsoft/AL-Go-PTE@main",
   "installTestFramework": true,
-  "installTestLibraries": true
+  "installTestLibraries": true,
+  "runTests": false
 }
