@@ -1,7 +1,10 @@
-codeunit 50100 HelloWorld
+codeunit 50101 MyTests
 {
-    trigger OnRun()
+    Subtype = Test;
+
+    [Test]
+    procedure TestSimples()
     begin
-        Message('App de teste OK!');
+        // teste simples
     end;
 }

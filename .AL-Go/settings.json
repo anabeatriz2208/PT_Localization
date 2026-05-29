@@ -1,7 +1,8 @@
 {
-  "$schema": "https://raw.githubusercontent.com/microsoft/AL-Go-Actions/v8.3/.Modules/settings.schema.json",
-
+  "$schema": "https://raw.githubusercontent.com/microsoft/AL-Go-Actions/v8.3/Modules/settings.schema.json",
   "type": "PTE",
   "country": "pt",
-  "repoVersion": "1.1"
+  "repoVersion": "1.1",
+  "installTestFramework": true,
+  "installTestLibraries": true
 }
