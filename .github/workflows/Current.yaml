@@ -1,5 +1,4 @@
 name: ' Test Current'
-
 on:
  workflow_call:
 
