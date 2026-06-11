@@ -1,10 +1,13 @@
-codeunit 50101 MyTests
+codeunit 50110 CustomerListTests
 {
     Subtype = Test;
 
     [Test]
-    procedure TestSimples()
+    procedure AbrirPagina()
+    var
+        CustomerList: TestPage "Customer List";
     begin
-        // teste simples
+        CustomerList.OpenView();
+        CustomerList.Close();
     end;
 }
